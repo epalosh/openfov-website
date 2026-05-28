@@ -874,8 +874,9 @@ footer .right {
   }
   .titleblock {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 28px;
     align-items: stretch;
+    padding: 48px 0 24px;
   }
   .how-grid {
     grid-template-columns: 1fr;
