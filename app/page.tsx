@@ -92,7 +92,7 @@ export default function Home() {
           <div className="monitor-screen">
             <video
               className="monitor-video"
-              src="/demo.mov"
+              src="/demo.mp4"
               poster="/demo-poster.png"
               autoPlay
               muted
