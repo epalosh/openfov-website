@@ -130,7 +130,7 @@ const jsonLd = {
       applicationCategory: "GameApplication",
       applicationSubCategory: "Sim Racing Utility",
       operatingSystem: "Windows",
-      softwareVersion: "0.1.0",
+      softwareVersion: "0.2.1",
       license: "https://opensource.org/licenses/MIT",
       isAccessibleForFree: true,
       offers: {

@@ -22,7 +22,7 @@ export default function Home() {
         <div className="actions">
           <div className="release-label">
             <span>Latest release</span>
-            <span className="v">v0.1.0</span>
+            <span className="v">v0.2.1</span>
           </div>
 
           <a
