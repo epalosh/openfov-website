@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { getLatestVersion } from "./lib/release";
 
 const display = Space_Grotesk({
   subsets: ["latin"],
@@ -118,7 +119,7 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-const jsonLd = {
+const buildJsonLd = (version: string) => ({
   "@context": "https://schema.org",
   "@graph": [
     {
@@ -130,7 +131,7 @@ const jsonLd = {
       applicationCategory: "GameApplication",
       applicationSubCategory: "Sim Racing Utility",
       operatingSystem: "Windows",
-      softwareVersion: "0.2.1",
+      softwareVersion: version,
       license: "https://opensource.org/licenses/MIT",
       isAccessibleForFree: true,
       offers: {
@@ -179,13 +180,15 @@ const jsonLd = {
       sameAs: ["https://github.com/epalosh/openfov"],
     },
   ],
-};
+});
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const jsonLd = buildJsonLd(await getLatestVersion());
+
   return (
     <html
       lang="en"

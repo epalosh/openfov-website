@@ -1,7 +1,10 @@
 import { SiteHeader } from "./components/SiteHeader";
 import { SiteFooter } from "./components/SiteFooter";
+import { getLatestVersion } from "./lib/release";
 
-export default function Home() {
+export default async function Home() {
+  const version = await getLatestVersion();
+
   return (
     <>
       <SiteHeader />
@@ -22,7 +25,7 @@ export default function Home() {
         <div className="actions">
           <div className="release-label">
             <span>Latest release</span>
-            <span className="v">v0.2.1</span>
+            <span className="v">{`v${version}`}</span>
           </div>
 
           <a
