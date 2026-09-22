@@ -688,6 +688,227 @@ h1 em {
   color: var(--ink-dim);
 }
 
+/* ─── Testimonials: scrolling comment thread ─── */
+.thread-wall {
+  --thread-h: 540px;
+  position: relative;
+  margin-top: 36px;
+  padding: 48px 0 0;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 40px;
+  height: calc(var(--thread-h) + 48px);
+  margin-bottom: 56px;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    transparent 0,
+    black 48px,
+    black calc(100% - 96px),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    180deg,
+    transparent 0,
+    black 48px,
+    black calc(100% - 96px),
+    transparent 100%
+  );
+}
+
+.thread-col {
+  position: relative;
+  min-width: 0;
+}
+
+.thread-col-all {
+  display: none;
+}
+
+.thread-stream {
+  display: flex;
+  flex-direction: column;
+  animation: thread-scroll var(--dur, 60s) linear infinite;
+  animation-delay: var(--delay, 0s);
+  will-change: transform;
+}
+
+@keyframes thread-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    /* one full copy of the column */
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+/* A single comment, shaped like a Reddit comment row */
+.rc {
+  position: relative;
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  grid-template-rows: auto auto auto;
+  column-gap: 12px;
+  padding-bottom: 32px;
+}
+
+.rc-avatar {
+  grid-row: 1;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono-stack);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink);
+  border: 1px solid rgba(64, 196, 196, 0.32);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 12px rgba(64, 196, 196, 0.12);
+  position: relative;
+  z-index: 1;
+}
+.rc-tone-0 {
+  background: radial-gradient(circle at 30% 30%, #1f5c62, #0b1f22 75%);
+}
+.rc-tone-1 {
+  background: radial-gradient(circle at 30% 30%, #1a4a66, #0a1a24 75%);
+}
+.rc-tone-2 {
+  background: radial-gradient(circle at 30% 30%, #2a6e6a, #0c2322 75%);
+}
+.rc-tone-3 {
+  background: radial-gradient(circle at 30% 30%, #34535a, #0f1a1d 75%);
+}
+
+.rc-user {
+  grid-row: 1;
+  align-self: center;
+  font-family: var(--font-mono-stack);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--ink-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rc-body {
+  grid-column: 2;
+  grid-row: 2;
+  margin-top: 8px;
+  font-size: 14.5px;
+  line-height: 23px;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+.rc-actions {
+  grid-column: 2;
+  grid-row: 3;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--ink-mute);
+  font-size: 11.5px;
+  font-weight: 500;
+}
+
+.rc-actions svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.rc-vote {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(12, 22, 24, 0.5);
+}
+
+.rc-vote-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--ink-mute);
+}
+
+.rc-reply {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* the vertical thread rail that hangs off each avatar, Reddit-style */
+.rc-thread {
+  position: absolute;
+  left: 13.5px;
+  top: 34px;
+  bottom: 6px;
+  width: 1px;
+  background: linear-gradient(180deg, #243436, var(--line) 60%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thread-wall {
+    height: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+    padding-bottom: 48px;
+  }
+  .thread-stream {
+    animation: none;
+  }
+  .rc[aria-hidden="true"] {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .thread-wall {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 32px;
+  }
+  .thread-col:nth-child(3) {
+    display: none;
+  }
+}
+
+/* ─── Reveal: fade + rise as elements enter the viewport ─── */
+/* Only hides content when the inline <head> script confirmed JS is running. */
+[data-js] [data-reveal] {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity 700ms cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 900ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+[data-js] [data-reveal][data-in] {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-js] [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* ─── Footer ─── */
 footer {
   padding: 32px 0 56px;
@@ -881,6 +1102,17 @@ footer .right {
   .how-grid {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+  .thread-wall {
+    --thread-h: 460px;
+    margin-top: 24px;
+    grid-template-columns: 1fr;
+  }
+  .thread-col {
+    display: none;
+  }
+  .thread-col-all {
+    display: block;
   }
   footer {
     flex-direction: column;

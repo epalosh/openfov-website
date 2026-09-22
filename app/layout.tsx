@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { getLatestVersion } from "./lib/release";
+import { Reveal } from "./components/Reveal";
+import { REVEAL_SCRIPT } from "./reveal-script";
 
 const display = Space_Grotesk({
   subsets: ["latin"],
@@ -193,8 +195,18 @@ export default async function RootLayout({
     <html
       lang="en"
       className={`${display.variable} ${sans.variable} ${mono.variable}`}
+      suppressHydrationWarning
     >
+      <head>
+        {/* Runs before first paint: gates the reveal styles behind JS and
+            starts the scroll-reveal observer at DOM-ready. See reveal-script.ts */}
+        <script
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: REVEAL_SCRIPT }}
+        />
+      </head>
       <body>
+        <Reveal />
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger

@@ -1,6 +1,7 @@
 import { SiteHeader } from "./components/SiteHeader";
 import { SiteFooter } from "./components/SiteFooter";
 import { getLatestVersion } from "./lib/release";
+import { Testimonials } from "./components/Testimonials";
 
 export default async function Home() {
   const version = await getLatestVersion();
@@ -89,7 +90,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <div className="monitor">
+      <div className="monitor" data-reveal suppressHydrationWarning>
         <div className="monitor-frame">
           <div className="monitor-bezel-top" />
           <div className="monitor-screen">
@@ -112,6 +113,8 @@ export default async function Home() {
         <div className="monitor-base" aria-hidden="true" />
         <div className="monitor-shadow" aria-hidden="true" />
       </div>
+
+      <Testimonials />
 
       <SiteFooter />
       </div>
