@@ -1,7 +1,7 @@
 export function SiteFooter() {
   return (
     <footer>
-      <div>© 2026 OpenFOV — MIT licensed</div>
+      <div>© 2026 OpenFOV · MIT licensed</div>
       <div className="right">
         <a
           href="https://github.com/epalosh/openfov"

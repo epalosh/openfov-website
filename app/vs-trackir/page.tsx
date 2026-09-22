@@ -4,9 +4,9 @@ import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
 
 const TITLE =
-  "OpenFOV vs TrackIR — a free, open source head tracking alternative for iRacing";
+  "OpenFOV vs TrackIR: a free, open source head tracking alternative for iRacing";
 const DESCRIPTION =
-  "Comparing OpenFOV and TrackIR for iRacing — hardware, cost, latency, accuracy, and software. The honest case for using a webcam-based open source head tracker instead of TrackIR 5.";
+  "Comparing OpenFOV and TrackIR for iRacing: hardware, cost, latency, accuracy, and software. The honest case for using a webcam-based open source head tracker instead of TrackIR 5.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -34,10 +34,10 @@ export default function VsTrackIRPage() {
       <div className="page">
         <article className="article">
           <div className="article-eyebrow">Compare</div>
-          <h1>OpenFOV vs TrackIR — a free TrackIR alternative for iRacing</h1>
+          <h1>OpenFOV vs TrackIR: a free TrackIR alternative for iRacing</h1>
           <p className="article-lede">
             TrackIR 5 has been the de-facto head tracker for sim racing for
-            over a decade — it&rsquo;s great hardware, but it&rsquo;s also
+            over a decade. It&rsquo;s great hardware, but it&rsquo;s also
             $150+ for the camera and another $50+ for the TrackClip Pro.
             OpenFOV is a free, open source alternative that uses any webcam
             and works inside iRacing the same way. Here&rsquo;s an honest
@@ -66,7 +66,7 @@ export default function VsTrackIRPage() {
           <h3>OpenFOV</h3>
           <ul>
             <li>Any USB or built-in webcam ($0&ndash;$80)</li>
-            <li>Nothing on your head — bare-face tracking</li>
+            <li>Nothing on your head, just bare-face tracking</li>
             <li>Mounted anywhere with a clear view of your face</li>
             <li>Works in normal room lighting; lighting affects quality</li>
           </ul>
@@ -74,11 +74,11 @@ export default function VsTrackIRPage() {
           <h2>Latency</h2>
           <p>
             TrackIR runs a dedicated IR sensor at 120&nbsp;Hz with effectively
-            zero processing delay — you&rsquo;re looking at single-digit
+            zero processing delay, so you&rsquo;re looking at single-digit
             millisecond latency. OpenFOV runs at the webcam&rsquo;s native
             frame rate (typically 30 or 60&nbsp;fps) plus a few milliseconds
-            of inference. In practice that&rsquo;s 15&ndash;30&nbsp;ms total
-            — fast enough that virtually every driver can&rsquo;t tell the
+            of inference. In practice that&rsquo;s 15&ndash;30&nbsp;ms total,
+            fast enough that virtually every driver can&rsquo;t tell the
             difference during normal racing. Professional alien-tier racers
             doing back-to-back testing may prefer TrackIR; everyone else
             won&rsquo;t notice.
@@ -126,17 +126,17 @@ export default function VsTrackIRPage() {
           <ul>
             <li>You race competitively and need absolute minimum latency</li>
             <li>You race in very dark rooms where webcams struggle</li>
-            <li>You already own one — no reason to switch</li>
+            <li>You already own one, so there&rsquo;s no reason to switch</li>
           </ul>
 
           <h2>Where OpenFOV fits with other free options</h2>
           <p>
-            There&rsquo;s a long history of free TrackIR alternatives — most
+            There&rsquo;s a long history of free TrackIR alternatives, most
             notably <strong>OpenTrack</strong>, which is a fantastic project
             but typically requires you to build a DIY IR LED clip or use a
             PlayStation Eye camera with hand-soldered filters. OpenFOV is
             aimed at people who want the same outcome (in-game head look in
-            iRacing) without any hardware project at all — point a webcam at
+            iRacing) without any hardware project at all: point a webcam at
             your face and go.
           </p>
 

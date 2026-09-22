@@ -130,7 +130,7 @@ body::before {
 
 /* Lift real content above atmosphere */
 .site-header {
-  z-index: 50; /* already sticky — keep above page + atmosphere */
+  z-index: 50; /* already sticky; keep above page + atmosphere */
 }
 .page {
   position: relative;
@@ -167,7 +167,7 @@ button {
   backdrop-filter: saturate(140%) blur(14px);
   -webkit-backdrop-filter: saturate(140%) blur(14px);
   border-bottom: 1px solid var(--line);
-  /* hairline teal underline beneath the divider — a single emissive line */
+  /* hairline teal underline beneath the divider: a single emissive line */
 }
 .site-header::after {
   content: "";
@@ -377,7 +377,7 @@ h1 em {
   max-width: 420px;
 }
 
-/* Action cluster — bordered release card */
+/* Action cluster: bordered release card */
 .actions {
   position: relative;
   border: 1px solid #2a3a3c;

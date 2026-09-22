@@ -27,7 +27,7 @@ const mono = Geist_Mono({
 });
 
 const SITE_URL = "https://openfov.com";
-const SITE_TITLE = "OpenFOV — Webcam head tracking for iRacing";
+const SITE_TITLE = "OpenFOV: Webcam head tracking for iRacing";
 const SITE_DESCRIPTION =
   "OpenFOV uses your webcam to control iRacing's in-game FOV. Unlocks VR-style functionality for your monitor!";
 
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: SITE_TITLE,
-    template: "%s — OpenFOV",
+    template: "%s | OpenFOV",
   },
   description: SITE_DESCRIPTION,
   applicationName: "OpenFOV",
@@ -98,7 +98,7 @@ export const metadata: Metadata = {
         url: "/link-preview.png",
         width: 1280,
         height: 640,
-        alt: "OpenFOV — Webcam head tracking for iRacing",
+        alt: "OpenFOV: Webcam head tracking for iRacing",
       },
     ],
   },
@@ -127,7 +127,7 @@ const buildJsonLd = (version: string) => ({
     {
       "@type": "SoftwareApplication",
       name: "OpenFOV",
-      alternateName: "OpenFOV — Webcam head tracking for iRacing",
+      alternateName: "OpenFOV: Webcam head tracking for iRacing",
       description: SITE_DESCRIPTION,
       url: SITE_URL,
       applicationCategory: "GameApplication",

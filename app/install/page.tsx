@@ -3,9 +3,9 @@ import Link from "next/link";
 import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
 
-const TITLE = "Install OpenFOV — webcam head tracking for iRacing on Windows";
+const TITLE = "Install OpenFOV: webcam head tracking for iRacing on Windows";
 const DESCRIPTION =
-  "Step-by-step install guide for OpenFOV — set up free webcam head tracking for iRacing on Windows in under five minutes. Download, webcam configuration, iRacing setup, troubleshooting.";
+  "Step-by-step install guide for OpenFOV. Set up free webcam head tracking for iRacing on Windows in under five minutes. Download, webcam configuration, iRacing setup, troubleshooting.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -37,7 +37,7 @@ export default function InstallPage() {
           <p className="article-lede">
             OpenFOV is a free, open source head tracker for iRacing that runs
             on any Windows 10 or 11 machine with a webcam. The full setup
-            takes about five minutes — here&rsquo;s the complete walkthrough.
+            takes about five minutes. Here&rsquo;s the complete walkthrough.
           </p>
 
           <h2>What you&rsquo;ll need</h2>
@@ -51,7 +51,7 @@ export default function InstallPage() {
             <li>~150 MB of free disk space</li>
           </ul>
 
-          <h2>Step 1 — Download the latest release</h2>
+          <h2>Step 1: Download the latest release</h2>
           <p>
             Head to the{" "}
             <a
@@ -62,28 +62,28 @@ export default function InstallPage() {
               OpenFOV releases page on GitHub
             </a>{" "}
             and download the latest <code>OpenFOV-setup.exe</code>. Every
-            release is signed and built from the public source — you can
+            release is signed and built from the public source, so you can
             inspect the build workflow in the repo.
           </p>
 
-          <h2>Step 2 — Install</h2>
+          <h2>Step 2: Install</h2>
           <p>
             Run the installer. Windows SmartScreen may show a warning the
             first time because the binary doesn&rsquo;t carry an EV code
-            signing certificate (those cost $400/year and OpenFOV is free) —
-            click <strong>More info &rarr; Run anyway</strong>. If you&rsquo;d
+            signing certificate (those cost $400/year and OpenFOV is free).
+            Click <strong>More info &rarr; Run anyway</strong>. If you&rsquo;d
             rather build from source, the GitHub repo has a one-command
             developer build under the README.
           </p>
 
-          <h2>Step 3 — Pick your webcam</h2>
+          <h2>Step 3: Pick your webcam</h2>
           <p>
             Launch OpenFOV. The first run opens the camera picker. Choose the
             webcam you want to use for head tracking, then click{" "}
             <strong>Calibrate</strong>. Look straight at the monitor and stay
             still for 2&ndash;3 seconds while OpenFOV captures your neutral
             head pose. This is what the rest of your movement will be
-            measured against — try to sit how you normally sit while racing.
+            measured against, so try to sit how you normally sit while racing.
           </p>
 
           <h3>Webcam tips for the best tracking quality</h3>
@@ -102,21 +102,21 @@ export default function InstallPage() {
             </li>
             <li>
               <strong>Disable webcam &ldquo;auto-framing&rdquo;</strong>{" "}
-              features (Logitech RightSight, Windows Studio Effects, etc.) —
-              they move the image and confuse the tracker.
+              features (Logitech RightSight, Windows Studio Effects, etc.).
+              They move the image and confuse the tracker.
             </li>
           </ul>
 
-          <h2>Step 4 — Configure iRacing</h2>
+          <h2>Step 4: Configure iRacing</h2>
           <p>
             Inside iRacing, open <strong>Options &rarr; Driver</strong> and
             make sure <em>Cockpit Head Movement</em> is enabled. That&rsquo;s
-            it — OpenFOV drives the same camera offsets iRacing already
+            it. OpenFOV drives the same camera offsets iRacing already
             supports, so no special mod or DLL injection is needed. Your
             membership is in no way at risk.
           </p>
 
-          <h2>Step 5 — Drive</h2>
+          <h2>Step 5: Drive</h2>
           <p>
             Start any session and OpenFOV will begin sending head pose to
             iRacing the moment you&rsquo;re in-car. Turn your head left, the
@@ -157,7 +157,7 @@ export default function InstallPage() {
             >
               GitHub
             </a>{" "}
-            — include your Windows version, webcam model, and a short
+            and include your Windows version, webcam model, and a short
             description of what&rsquo;s happening. The project is actively
             maintained.
           </p>
